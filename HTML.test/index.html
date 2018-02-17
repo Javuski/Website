@@ -1,0 +1,62 @@
+<!doctype HTML>
+<html>
+<head>
+    <title> Website Proyect </title>
+    <link rel='stylesheet' type='text/css' href='style.css'>
+</head>
+    
+<body>
+    <img class='img1' src="https://dncache-mauganscorp.netdna-ssl.com/cropped-wallpapers/1484/1484182-1920x1080-[DesktopNexus.com].jpg?st=fcga8DSNw0Pi9qFCK2KcGA&e=1516518292" > 
+    <ul class='nav'>
+        <li class='active'>Home</li>
+        <li>Phones</li>
+        <li>Computers</li>
+        <li>Accesories</li>
+    </ul>
+  <div class="grid">
+    <div class= box>
+       
+      <img class= "img2" src = "Images/image.laptop.jpg" alt= 'Computer image' width='400' height='250'>
+    </div> 
+    <div>  
+      <figure>
+        <img src = "Images/iMac.png" alt= 'iMac' width='400' height='250'>
+         <figcaption>This is an iMac, the best "all-in-one" PC ever made.</figcaption>
+      </figure>
+    </div>
+      
+    <div id= "app" class="box">
+      <input type="text" v-model = "msg">
+      <button @click="add(msg)"> add </button>
+       <div class="spec ">
+        <h2>Specifications</h2>
+        <p v-for="part in parts">{{part}}</p>
+       </div> 
+    </div>
+   </div>      
+   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+   <script>
+     var vm = new Vue({
+       el: "#app", 
+       data: {
+         msg: "", 
+         parts: ["OS: Windows 10", "Procesor: Inter i7 7700K", "RAM: 32GB", "Card: Nvidia GTX Asus ROG Strix 1080"]
+       },
+       methods: {
+         add: function(msg){
+           this.parts.push(msg);
+         }
+       }
+
+     })
+   </script>
+    
+    
+    
+
+    
+    
+    
+</body> 
+
+</html>
